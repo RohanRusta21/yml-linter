@@ -32,6 +32,9 @@
             color: #666;
             margin-bottom: 20px;
         }
+        .linedtextarea {
+            position: relative;
+        }
         textarea {
             background-color: #333; /* Dark background color */
             color: #fff; /* Light text color for contrast */
@@ -41,59 +44,18 @@
             border-radius: 5px;
             margin-bottom: 10px;
             resize: vertical;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-        input[type="checkbox"] {
-            margin-right: 5px;
-            cursor: pointer;
-        }
-        label {
-            color: #666;
-        }
-        #result {
-            color: white;
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        /* Lined textarea */
-        .linedtextarea {
-            position: relative;
+            font-family: monospace; /* Ensure consistent font for line numbers */
         }
         .lines {
             width: 50px;
             float: left;
-        }
-        .codelines {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            text-align: right;
             padding-right: 5px;
+            border-right: 1px solid #666; /* Vertical line between line numbers and text */
+            box-sizing: border-box; /* Include border width in width calculation */
         }
         .lineno {
             color: #666;
-        }
-        .lineselect {
-            background-color: #4CAF50;
-            color: #fff;
-            border-radius: 3px;
-            padding: 0 3px;
-        }
-        .adsense {
-            height: 600px;
-            width: 120px;
-            float: left;
-            margin: 10px;
-            /* visibility: hidden; Uncomment to hide */
         }
         /* Clearfix */
         .clearfix::after {
@@ -125,7 +87,13 @@
         <div id='main_content'>
             <h1>YAML Validator</h1>
             <p>Paste in your YAML and click "Go".</p>
-            <textarea name="yaml" id="yaml" rows="20" class="lined" oninput="yamlChanged()"></textarea>
+            <div class="linedtextarea">
+                <div class="lines">
+                    <span class="lineno">1</span><br>
+                    <!-- Add more line numbers as needed -->
+                </div>
+                <textarea name="yaml" id="yaml" rows="20" class="lined" oninput="yamlChanged()"></textarea>
+            </div>
             <button type="button" onclick="parseYaml()">Go</button>
             <input type="checkbox" id="reformat" name="reformat" checked="checked" />
             <label for="reformat"> Reformat (strips comments)</label>

@@ -104,13 +104,14 @@
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="./packed.js"></script>
-    <!--<script src="./lta.js"></script>-->
+    <script src="./lta.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-85BSMH89L3');
     </script>
+    <script src="./jquery-linedtextarea.js"></script>
 </head>
 <body>
     <div id='wrapper'>
@@ -216,5 +217,13 @@
         </div>
         <div class="clearfix"></div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $(".lined").linedtextarea({
+                selectedLine: 10, // Optional: Specify the initially selected line
+                selectedClass: 'lineselect' // Optional: CSS class for the selected line
+            });
+        });
+    </script>
 </body>
 </html>

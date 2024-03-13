@@ -132,6 +132,16 @@
             <input type="checkbox" id="resolve_aliases" name="resolve_aliases" checked="checked" />
             <label id='resolve_aliases_label' for="resolve_aliases"> Resolve aliases</label><br>
             <div id='result'></div>
+            <p><strong>What is YAML</strong></p>
+            <p>YAML ain't markup language. YAML is a concise data serialization language, which is typically considered easier to read than the more verbose JSON or XML. It is most often used in configuration files of servers and software applications. Clark Evans proposed the spec in 2001 as the result of an effort to simplify XML. According to his resume, at the time he conceived of YAML he was working with Python, which likely influenced the syntax of YAML as an indentation-based language.</p>
+            <p><strong>Advantages of YAML</strong></p>
+            <ul>
+                <li>Concise syntax eliminates many syntax errors common in other markup languages, such as missing closing brackets</li>
+                <li>YAML allows users to add comments to their data, which can be useful for documentation or explaining certain parts of the data. JSON does not support comments, so any comments added to a JSON file would be treated as part of the data.</li>
+                <li>YAML allows easy reuse of redundant configuration simply by creating a named anchor with an "&" and referencing with "*"</li>
+                <li>YAML allows users to include multiple documents within a single file, separated by '---'. This can be useful for organizing data or separating different sections of a configuration file.</li>
+                <li>A less commonly used advantage is that YAML allows custom data typing, when the core or advanced data types are insufficient</li>
+            </ul>
             <script>
                 $('#reformat').change(function() {
                     // disable resolve aliases if reformat is not checked

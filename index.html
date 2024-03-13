@@ -32,9 +32,6 @@
             color: #666;
             margin-bottom: 20px;
         }
-        .linedtextarea {
-            position: relative;
-        }
         textarea {
             background-color: #333; /* Dark background color */
             color: #fff; /* Light text color for contrast */
@@ -45,6 +42,7 @@
             margin-bottom: 10px;
             resize: vertical;
             font-family: monospace; /* Ensure consistent font for line numbers */
+            float: left; /* Adjusting textarea alignment */
         }
         .lines {
             width: 50px;
@@ -87,13 +85,11 @@
         <div id='main_content'>
             <h1>YAML Validator</h1>
             <p>Paste in your YAML and click "Go".</p>
-            <div class="linedtextarea">
-                <div class="lines">
-                    <span class="lineno">1</span><br>
-                    <!-- Add more line numbers as needed -->
-                </div>
-                <textarea name="yaml" id="yaml" rows="20" class="lined" oninput="yamlChanged()"></textarea>
+            <div class="lines">
+                <span class="lineno">1</span><br>
+                <!-- Add more line numbers as needed -->
             </div>
+            <textarea name="yaml" id="yaml" rows="20" class="lined" oninput="yamlChanged()"></textarea>
             <button type="button" onclick="parseYaml()">Go</button>
             <input type="checkbox" id="reformat" name="reformat" checked="checked" />
             <label for="reformat"> Reformat (strips comments)</label>
